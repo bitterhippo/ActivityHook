@@ -1,4 +1,5 @@
 import express from "express";
+import { Router } from "express";
 import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
@@ -6,10 +7,9 @@ dotenv.config();
 const user = process.env.GITHUB_USERNAME;
 const token = process.env.GITHUB_TOKEN;
 
-const app = express();
-const PORT = 4000;
+const router = Router();
 
-app.get("/activity", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const response = await axios.get(
       `https://api.github.com/users/${user}/events/public`,
@@ -32,3 +32,5 @@ app.get("/activity", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch GitHub activity" });
   }
 });
+
+export const activityRouter = router;
