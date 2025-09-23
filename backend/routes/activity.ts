@@ -1,6 +1,4 @@
-import express from "express";
 import { Router } from "express";
-import axios from "axios";
 import dotenv from "dotenv";
 import { fetchGitHubActivity } from "../services/fetchGitHubInformation";
 dotenv.config();
