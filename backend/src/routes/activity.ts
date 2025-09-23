@@ -1,6 +1,6 @@
 import { Router } from "express";
 import axios from "axios";
-import { GitHubEvent } from "../src/models/GitHubEvents";
+import { GitHubEvent } from "../models/GitHubEvents";
 import dotenv from "dotenv";
 dotenv.config();
 
